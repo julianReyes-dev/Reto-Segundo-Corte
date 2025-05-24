@@ -37,8 +37,12 @@ public class AuthController {
     
     @PostMapping("/create")
     public ResponseEntity<?> createUser(@RequestBody CreateUserRequest request) {
-        authService.createUser(request.getUserId(), request.getPassword());
-        return ResponseEntity.ok("User created successfully");
+        try {
+            authService.createUser(request.getUserId(), request.getPassword());
+            return ResponseEntity.ok("User created successfully");
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
     
     @PostMapping("/validate")

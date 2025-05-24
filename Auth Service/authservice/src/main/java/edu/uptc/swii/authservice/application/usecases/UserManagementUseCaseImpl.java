@@ -18,7 +18,7 @@ public class UserManagementUseCaseImpl implements UserManagementUseCase {
     @Override
     public User createUser(Long userId, String password) {
         if (userRepositoryPort.existsByUserId(userId)) {
-            throw new RuntimeException("User already exists");
+            throw new RuntimeException("User with ID " + userId + " already exists");
         }
         
         User user = new User(userId, password, "ADMIN");
