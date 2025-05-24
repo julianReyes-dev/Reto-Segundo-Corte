@@ -21,7 +21,7 @@ auth-service/
 
 ### 🔧 Prerrequisitos
 - Java 17+
-- MySQL 8.0+
+- PostgreSQL 13.0+
 - Maven 3.8+
 
 ### ⚙️ Configuración
