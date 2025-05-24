@@ -27,17 +27,48 @@ auth-service/
 ### ⚙️ Configuración
 1. Crear base de datos:
 ```sql
-CREATE DATABASE LoginDB;
+CREATE TABLE IF NOT EXISTS login (
+    id SERIAL PRIMARY KEY,
+    user_id BIGINT UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(50) NOT NULL
+);
 ```
 
 2. Configurar `application.properties`:
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/LoginDB
-spring.datasource.username=root
-spring.datasource.password=tu_contraseña
+spring.application.name=authservice
+# Server
+server.port=8080
 
-jwt.secret=clave-secreta-256-bits
-jwt.expiration=3600000 # 1 hora
+# Database
+spring.datasource.url=jdbc:postgresql://localhost:5432/logindb
+spring.datasource.username=postgres
+spring.datasource.password=UPTC2025
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+# Optimización para PostgreSQL
+spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+
+# Mostrar SQL en logs (útil para depuración)
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+
+# JPA
+spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+# JWT
+jwt.secret=my-very-secure-secret-key-that-is-at-least-256-bits-long-1234567890
+jwt.expiration=3600000
+
+# Swagger
+springdoc.api-docs.path=/api-docs
+springdoc.swagger-ui.path=/swagger-ui.htmll
 ```
 
 ### 🚀 Endpoints Principales
