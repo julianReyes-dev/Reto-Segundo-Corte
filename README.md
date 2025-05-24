@@ -99,4 +99,3 @@ sequenceDiagram
 - **Error 403**: Verificar que el token esté en header `Authorization`
 - **Token inválido**: Revisar logs para mensajes de error específicos
 - **Conexión DB**: Verificar credenciales en application.properties
-```
