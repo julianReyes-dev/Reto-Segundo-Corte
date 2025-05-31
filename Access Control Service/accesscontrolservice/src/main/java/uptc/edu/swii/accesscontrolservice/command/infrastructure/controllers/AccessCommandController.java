@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/access/command")
-@RequiredArgsConstructor
 @Tag(name = "Access Command", description = "Endpoints for access command operations")
+@RequiredArgsConstructor
 public class AccessCommandController {
 
     private final AccessCommandService commandService;

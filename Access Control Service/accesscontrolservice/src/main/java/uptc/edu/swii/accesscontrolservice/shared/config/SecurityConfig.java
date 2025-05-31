@@ -35,10 +35,16 @@ public class SecurityConfig {
                 .requestMatchers("/api/access/query/**").hasAnyRole("ADMIN", "USER")
                 
                 // Swagger y documentación
-                .requestMatchers("/swagger-ui/**").permitAll()
-                .requestMatchers("/v3/api-docs/**").permitAll()
-                .requestMatchers("/swagger-resources/**").permitAll()
-                .requestMatchers("/webjars/**").permitAll()
+                .requestMatchers(
+                    "/swagger-ui.html",
+                    "/swagger-ui/**",
+                    "/swagger-ui/index.html",  // <-- esta línea extra
+                    "/v3/api-docs",
+                    "/v3/api-docs/**",
+                    "/api-docs/**"
+                ).permitAll()
+
+
                 
                 // Todos los demás endpoints requieren autenticación
                 .anyRequest().authenticated()

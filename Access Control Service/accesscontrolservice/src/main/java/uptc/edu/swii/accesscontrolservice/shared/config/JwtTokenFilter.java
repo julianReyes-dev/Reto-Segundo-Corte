@@ -24,15 +24,23 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
-        
-        String header = request.getHeader("Authorization");
-        
-        // Permitir endpoints públicos sin token
-        if (request.getRequestURI().startsWith("/api/access/command/check-in") ||
-            request.getRequestURI().startsWith("/api/access/command/check-out")) {
+
+        String path = request.getRequestURI();
+
+        // Permitir endpoints públicos y Swagger sin token
+        if (
+            path.startsWith("/api/access/command/check-in") ||
+            path.startsWith("/api/access/command/check-out") ||
+            path.startsWith("/swagger-ui") ||
+            path.startsWith("/v3/api-docs") ||
+            path.startsWith("/api-docs") ||
+            path.equals("/swagger-ui.html")
+        ) {
             filterChain.doFilter(request, response);
             return;
         }
+
+        String header = request.getHeader("Authorization");
 
         if (header == null || !header.startsWith("Bearer ")) {
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Missing or invalid Authorization header");
@@ -40,7 +48,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         }
 
         String token = header.replace("Bearer ", "");
-        
+
         try {
             Claims claims = Jwts.parserBuilder()
                     .setSigningKey(Keys.hmacShaKeyFor(jwtSecret.getBytes()))
@@ -49,29 +57,26 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                     .getBody();
 
             String username = claims.getSubject();
-            
-            // Extraer roles del claim "role" (asegúrate que tu Auth Service incluya esto en el token)
             String role = claims.get("role", String.class);
-            
-            // Crear autoridades (roles deben comenzar con "ROLE_")
+
             List<SimpleGrantedAuthority> authorities = List.of(
                 new SimpleGrantedAuthority("ROLE_" + role)
             );
-            
+
             UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
                     username,
                     null,
                     authorities
             );
-            
+
             SecurityContextHolder.getContext().setAuthentication(auth);
-            
+
         } catch (Exception e) {
             SecurityContextHolder.clearContext();
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid token: " + e.getMessage());
             return;
         }
-        
+
         filterChain.doFilter(request, response);
     }
 }
