@@ -39,10 +39,15 @@ scrape_configs:
         labels:
           service: 'gateway-service'
 
-  # Kafka en Docker
-  - job_name: 'kafka'
+  # Kafka Exporter
+  - job_name: 'kafka-exporter'
     static_configs:
-      - targets: ['kafka:7071']
-        labels:
-          service: 'kafka'
-    metrics_path: '/metrics'
+      - targets: ['kafka-exporter:9308']
+    metrics_path: /metrics
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'kafka-exporter'
+      - source_labels: [__address__]
+        target_label: service
+        replacement: 'kafka'

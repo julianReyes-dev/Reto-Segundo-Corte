@@ -171,3 +171,46 @@ Caused by: java.io.EOFException: null
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268) ~[postgresql-42.7.5.jar!/:42.7.5]
 	... 14 common frames omitted
 
+2025-06-01T18:31:42.324-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@782b5c00 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:31:47.916-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@607a8754 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:31:53.402-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@21ace1ee (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:31:55.988-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@36ef3046 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:32:03.083-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1eb4f367 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:32:09.791-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@a98ec5 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:32:31.231-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@769d0ecb (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:32:39.869-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6c9f1816 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:32:43.844-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@626d635e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:33:02.835-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@21099da2 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:33:03.445-05:00  WARN 421197 --- [authservice] [onnection-adder] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (903f7af0-0bf6-42c5-8bdf-9c9320af5139)
+
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.Driver.makeConnection(Driver.java:446) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:139) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:483) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:747) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726) ~[HikariCP-6.3.0.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:328) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:192) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:159) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:144) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:76) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:476) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.enableSSL(ConnectionFactoryImpl.java:600) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:201) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268) ~[postgresql-42.7.5.jar!/:42.7.5]
+	... 14 common frames omitted
+
