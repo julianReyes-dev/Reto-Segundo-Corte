@@ -3,29 +3,46 @@ global:
   evaluation_interval: 15s
 
 scrape_configs:
-  # Usando network_mode: host
+  # Servicios locales (corriendo en el host)
   - job_name: 'auth-service'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['localhost:8080']
+      - targets: ['host.docker.internal:8080']
+        labels:
+          service: 'auth-service'
 
   - job_name: 'employee-service'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['localhost:8081']
+      - targets: ['host.docker.internal:8081']
+        labels:
+          service: 'employee-service'
 
   - job_name: 'access-control-service'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['localhost:8083']
+      - targets: ['host.docker.internal:8083']
+        labels:
+          service: 'access-control-service'
 
   - job_name: 'reporting-service'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['localhost:8084']
+      - targets: ['host.docker.internal:8084']
+        labels:
+          service: 'reporting-service'
+
+  - job_name: 'gateway-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['host.docker.internal:8085']
+        labels:
+          service: 'gateway-service'
 
   # Kafka en Docker
   - job_name: 'kafka'
     static_configs:
-      - targets: ['kafka:7071']  # Puerto JMX
+      - targets: ['kafka:7071']
+        labels:
+          service: 'kafka'
     metrics_path: '/metrics'

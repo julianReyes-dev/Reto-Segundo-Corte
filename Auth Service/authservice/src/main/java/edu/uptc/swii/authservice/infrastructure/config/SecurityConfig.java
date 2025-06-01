@@ -38,10 +38,12 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(
                     "/api/auth/**",
+                    "/api/auth/create", 
+                    "/api/auth/validate",
                     "/actuator/**",
                     "/actuator/prometheus",
                     "/api-docs/**", 
-                    "/v3/api-docs/**", 
+                    "/v3/api-docs/**",
                     "/swagger-ui/**", 
                     "/swagger-ui.html"
                 ).permitAll()
@@ -55,6 +57,7 @@ public class SecurityConfig {
         return http.build();
     }
 
+    @SuppressWarnings("deprecation")
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();

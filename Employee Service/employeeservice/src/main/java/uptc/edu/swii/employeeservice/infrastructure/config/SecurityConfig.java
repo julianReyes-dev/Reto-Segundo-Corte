@@ -1,5 +1,6 @@
-package uptc.edu.swii.accesscontrolservice.shared.config;
+package uptc.edu.swii.employeeservice.infrastructure.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -15,10 +16,12 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableMethodSecurity
 public class SecurityConfig {
 
-    private final JwtTokenFilter jwtTokenFilter;
+    @Value("${jwt.secret}")
+    private String jwtSecret;
 
-    public SecurityConfig(JwtTokenFilter jwtTokenFilter) {
-        this.jwtTokenFilter = jwtTokenFilter;
+    @Bean
+    public JwtTokenFilter jwtTokenFilter() {
+        return new JwtTokenFilter(jwtSecret);
     }
 
     @Bean
@@ -27,14 +30,6 @@ public class SecurityConfig {
             .csrf(AbstractHttpConfigurer::disable)
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-
-                // Se elimina por seguridad
-                // Endpoints públicos (sin autenticación) 
-                //.requestMatchers("/api/access/command/check-in").permitAll()
-                //.requestMatchers("/api/access/command/check-out").permitAll()
-                
-                // Endpoints de consulta que requieren autenticación
-                .requestMatchers("/api/access/query/**").hasAnyRole("ADMIN", "USER")
                 
                 // Swagger y documentación
                 .requestMatchers(
@@ -51,7 +46,7 @@ public class SecurityConfig {
                 // Todos los demás endpoints requieren autenticación
                 .anyRequest().authenticated()
             )
-            .addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
+            .addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }

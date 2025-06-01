@@ -1,0 +1,12 @@
+springdoc:
+  swagger-ui:
+    urls:
+      - name: Auth Service
+        url: http://localhost:8080/api-docs
+      - name: Employee Service
+        url: http://localhost:8081/api-docs
+      - name: Access Control Service
+        url: http://localhost:8083/api-docs
+      - name: Reporting Service
+        url: http://localhost:8084/api-docs
+    path: /swagger-ui.html

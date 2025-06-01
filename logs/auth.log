@@ -1,0 +1,173 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.0)
+
+2025-06-01T16:51:58.403-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] e.u.s.a.AuthserviceApplication           : Starting AuthserviceApplication v0.0.1-SNAPSHOT using Java 17.0.15 with PID 421197 (/home/julian/Documentos/Software 2/Reto Segundo Corte/Auth Service/authservice/target/authservice-0.0.1-SNAPSHOT.jar started by julian in /home/julian/Documentos/Software 2/Reto Segundo Corte)
+2025-06-01T16:51:58.548-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] e.u.s.a.AuthserviceApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T16:52:39.519-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T16:52:40.664-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1025 ms. Found 1 JPA repository interface.
+2025-06-01T16:52:54.221-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-01T16:52:54.419-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-01T16:52:54.420-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-01T16:52:54.755-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-01T16:52:54.805-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 54763 ms
+2025-06-01T16:53:02.264-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T16:53:05.360-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T16:53:06.954-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T16:53:15.924-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T16:53:16.284-05:00  WARN 421197 --- [authservice] [           main] [                                                 ] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [hibernate.temp.use_jdbc_metadata_defaults], use [hibernate.boot.allow_jdbc_metadata_access] instead
+2025-06-01T16:53:16.760-05:00  WARN 421197 --- [authservice] [           main] [                                                 ] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T16:53:17.035-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [undefined/unknown]
+	Database driver: undefined/unknown
+	Database version: 12.0
+	Autocommit mode: undefined/unknown
+	Isolation level: <unknown>
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T16:53:36.620-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-01T16:53:36.779-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T16:53:38.470-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7866a7a6
+2025-06-01T16:53:38.494-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T16:53:40.020-05:00 DEBUG 421197 --- [authservice] [           main] [                                                 ] org.hibernate.SQL                        : 
+    create table login (
+        id bigint generated by default as identity,
+        password varchar(255) not null,
+        role varchar(255) not null,
+        user_id bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table login (
+        id bigint generated by default as identity,
+        password varchar(255) not null,
+        role varchar(255) not null,
+        user_id bigint not null,
+        primary key (id)
+    )
+2025-06-01T16:53:40.621-05:00 DEBUG 421197 --- [authservice] [           main] [                                                 ] org.hibernate.SQL                        : 
+    alter table if exists login 
+       drop constraint if exists UK_user_id
+Hibernate: 
+    alter table if exists login 
+       drop constraint if exists UK_user_id
+2025-06-01T16:53:40.674-05:00  WARN 421197 --- [authservice] [           main] [                                                 ] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-06-01T16:53:40.674-05:00  WARN 421197 --- [authservice] [           main] [                                                 ] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_user_id" of relation "login" does not exist, skipping
+2025-06-01T16:53:40.677-05:00 DEBUG 421197 --- [authservice] [           main] [                                                 ] org.hibernate.SQL                        : 
+    alter table if exists login 
+       add constraint UK_user_id unique (user_id)
+Hibernate: 
+    alter table if exists login 
+       add constraint UK_user_id unique (user_id)
+2025-06-01T16:53:40.870-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T16:53:49.435-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-01T16:53:49.442-05:00  WARN 421197 --- [authservice] [           main] [                                                 ] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-01T16:53:52.843-05:00  WARN 421197 --- [authservice] [           main] [                                                 ] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T16:53:57.563-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2025-06-01T16:54:00.192-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-01T16:54:09.535-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-01T16:54:09.910-05:00  INFO 421197 --- [authservice] [           main] [                                                 ] e.u.s.a.AuthserviceApplication           : Started AuthserviceApplication in 147.132 seconds (process running for 160.74)
+2025-06-01T16:54:16.715-05:00  INFO 421197 --- [authservice] [nio-8080-exec-1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-01T16:54:16.717-05:00  INFO 421197 --- [authservice] [nio-8080-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-01T16:54:16.750-05:00  INFO 421197 --- [authservice] [nio-8080-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 22 ms
+2025-06-01T16:55:46.374-05:00  INFO 421197 --- [authservice] [nio-8080-exec-5] [683ccc6141b20de78a42365c6b557409-1ff3542870a7c554] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 728 ms
+2025-06-01T17:15:29.595-05:00 DEBUG 421197 --- [authservice] [nio-8080-exec-4] [683cd0fed691bec406ee7043babed197-e93b002f0d6a0b42] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        login ue1_0 
+    where
+        ue1_0.id=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        login ue1_0 
+    where
+        ue1_0.id=?
+2025-06-01T17:15:29.968-05:00 DEBUG 421197 --- [authservice] [nio-8080-exec-4] [683cd0fed691bec406ee7043babed197-e93b002f0d6a0b42] org.hibernate.SQL                        : 
+    insert 
+    into
+        login
+        (password, role, user_id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        login
+        (password, role, user_id) 
+    values
+        (?, ?, ?)
+2025-06-01T18:14:28.320-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3119cea0 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:14:34.186-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4f515370 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:14:43.830-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@17cb714b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:15:04.480-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1c2db0e5 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:15:13.469-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@152fd985 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:15:17.066-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4a8c09ca (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:15:18.530-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@63446fa (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:15:24.600-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6dbc4448 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:15:32.237-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4567aa14 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:15:36.272-05:00  WARN 421197 --- [authservice] [l-1:housekeeper] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6ed1a1b0 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-01T18:15:37.194-05:00  WARN 421197 --- [authservice] [onnection-adder] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (b2b3bc4a-8dfd-49ed-b6da-7f35a7c4ec95)
+
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:352) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.Driver.makeConnection(Driver.java:446) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:139) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:483) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:747) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726) ~[HikariCP-6.3.0.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: java.net.ConnectException: Conexión rehusada
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268) ~[postgresql-42.7.5.jar!/:42.7.5]
+	... 14 common frames omitted
+
+2025-06-01T18:16:52.820-05:00  WARN 421197 --- [authservice] [onnection-adder] [                                                 ] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (fb403e64-f1a5-4e7f-b708-1710a00927dd)
+
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.Driver.makeConnection(Driver.java:446) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:139) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:483) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:747) ~[HikariCP-6.3.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726) ~[HikariCP-6.3.0.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: java.io.EOFException: null
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:478) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.enableSSL(ConnectionFactoryImpl.java:600) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:201) ~[postgresql-42.7.5.jar!/:42.7.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268) ~[postgresql-42.7.5.jar!/:42.7.5]
+	... 14 common frames omitted
+

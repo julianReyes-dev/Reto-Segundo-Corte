@@ -1,0 +1,276 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.0)
+
+2025-06-01T16:51:50.105-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] u.e.s.a.AccesscontrolserviceApplication  : Starting AccesscontrolserviceApplication v0.0.1-SNAPSHOT using Java 17.0.15 with PID 421198 (/home/julian/Documentos/Software 2/Reto Segundo Corte/Access Control Service/accesscontrolservice/target/accesscontrolservice-0.0.1-SNAPSHOT.jar started by julian in /home/julian/Documentos/Software 2/Reto Segundo Corte)
+2025-06-01T16:51:50.190-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] u.e.s.a.AccesscontrolserviceApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-06-01T16:52:36.716-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-01T16:52:36.757-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-01T16:52:39.817-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uptc.edu.swii.accesscontrolservice.query.infrastructure.repositories.AccessQueryRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2025-06-01T16:52:40.029-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3152 ms. Found 1 JPA repository interface.
+2025-06-01T16:52:40.245-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-01T16:52:40.246-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2025-06-01T16:52:40.357-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface uptc.edu.swii.accesscontrolservice.command.infrastructure.repositories.AccessCommandRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-01T16:52:40.410-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119 ms. Found 1 MongoDB repository interface.
+2025-06-01T16:52:49.370-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.s.cloud.context.scope.GenericScope     : BeanFactory id=4bfa573d-508e-3c81-ac72-c37a1b287c1d
+2025-06-01T16:53:00.245-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-06-01T16:53:00.459-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-01T16:53:00.469-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-01T16:53:01.490-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-01T16:53:01.545-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 69017 ms
+2025-06-01T16:53:13.693-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-01T16:53:14.463-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-01T16:53:14.991-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-01T16:53:19.195-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-01T16:53:19.670-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-01T16:53:22.527-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3ef914f5
+2025-06-01T16:53:22.546-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-01T16:53:25.146-05:00  WARN 421198 --- [accesscontrolservice] [           main] [                                                 ] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-01T16:53:25.652-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 13.21
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-01T16:53:48.429-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table access_commands (id bigint generated by default as identity, employee_id varchar(255) not null, event_type varchar(255) not null, processed boolean not null, timestamp timestamp(6) not null, primary key (id))
+2025-06-01T16:53:51.850-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-01T16:53:59.740-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.4.0"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "6.11.0-26-generic"}, "platform": "Java/Ubuntu/17.0.15+6-Ubuntu-0ubuntu124.04"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='admin', source='admin', password=<hidden>, mechanismProperties=<hidden>}, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@6acdca3a], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@1e40edb7, com.mongodb.Jep395RecordCodecProvider@27381497, com.mongodb.KotlinCodecProvider@282c0891]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27018], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@59cc46a4], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2025-06-01T16:53:59.997-05:00  INFO 421198 --- [accesscontrolservice] [localhost:27018] [                                                 ] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27018, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=487403396, minRoundTripTimeNanos=0}
+2025-06-01T16:54:02.343-05:00  WARN 421198 --- [accesscontrolservice] [           main] [                                                 ] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-01T16:54:03.204-05:00  WARN 421198 --- [accesscontrolservice] [           main] [                                                 ] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.List to interface org.springframework.data.domain.Vector as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2025-06-01T16:54:12.335-05:00  WARN 421198 --- [accesscontrolservice] [           main] [                                                 ] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-01T16:54:17.807-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2025-06-01T16:54:18.354-05:00  WARN 421198 --- [accesscontrolservice] [           main] [                                                 ] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e38d66b6-e196-4115-9cd8-3a816ed5e52b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-06-01T16:54:18.550-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-06-01T16:54:22.794-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-01T16:54:28.821-05:00  WARN 421198 --- [accesscontrolservice] [           main] [                                                 ] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-01T16:54:29.363-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:29092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = accesscontrolservice-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-06-01T16:54:29.924-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2025-06-01T16:54:29.924-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2025-06-01T16:54:29.926-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1748814869906
+2025-06-01T16:54:32.828-05:00  INFO 421198 --- [accesscontrolservice] [service-admin-0] [                                                 ] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for accesscontrolservice-admin-0 unregistered
+2025-06-01T16:54:32.841-05:00  INFO 421198 --- [accesscontrolservice] [service-admin-0] [                                                 ] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-06-01T16:54:32.841-05:00  INFO 421198 --- [accesscontrolservice] [service-admin-0] [                                                 ] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-06-01T16:54:32.842-05:00  INFO 421198 --- [accesscontrolservice] [service-admin-0] [                                                 ] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-06-01T16:54:32.875-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-06-01T16:54:32.991-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-access-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = access-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2025-06-01T16:54:33.220-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2025-06-01T16:54:34.010-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2025-06-01T16:54:34.013-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2025-06-01T16:54:34.020-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1748814874009
+2025-06-01T16:54:34.177-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-access-group-1, groupId=access-group] Subscribed to topic(s): access-events
+2025-06-01T16:54:34.412-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-access-group-1, groupId=access-group] Cluster ID: JTbuFjpnR8ykWAmrdCtUvQ
+2025-06-01T16:54:34.413-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-access-group-1, groupId=access-group] Discovered group coordinator localhost:29092 (id: 2147483646 rack: null)
+2025-06-01T16:54:34.430-05:00  INFO 421198 --- [accesscontrolservice] [           main] [                                                 ] u.e.s.a.AccesscontrolserviceApplication  : Started AccesscontrolserviceApplication in 173.045 seconds (process running for 185.3)
+2025-06-01T16:54:34.435-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-access-group-1, groupId=access-group] (Re-)joining group
+2025-06-01T16:54:34.552-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-access-group-1, groupId=access-group] Request joining group due to: need to re-join with the given member-id: consumer-access-group-1-56ba94f2-4839-4a55-bcdc-09b06a2af495
+2025-06-01T16:54:34.553-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-access-group-1, groupId=access-group] (Re-)joining group
+2025-06-01T16:54:37.582-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-access-group-1, groupId=access-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-access-group-1-56ba94f2-4839-4a55-bcdc-09b06a2af495', protocol='range'}
+2025-06-01T16:54:37.666-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-access-group-1, groupId=access-group] Finished assignment for group at generation 1: {consumer-access-group-1-56ba94f2-4839-4a55-bcdc-09b06a2af495=Assignment(partitions=[access-events-0, access-events-1, access-events-2])}
+2025-06-01T16:54:37.729-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-access-group-1, groupId=access-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-access-group-1-56ba94f2-4839-4a55-bcdc-09b06a2af495', protocol='range'}
+2025-06-01T16:54:37.738-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-access-group-1, groupId=access-group] Notifying assignor about the new Assignment(partitions=[access-events-0, access-events-1, access-events-2])
+2025-06-01T16:54:37.790-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-access-group-1, groupId=access-group] Adding newly assigned partitions: access-events-0, access-events-1, access-events-2
+2025-06-01T16:54:37.841-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-access-group-1, groupId=access-group] Found no committed offset for partition access-events-2
+2025-06-01T16:54:37.851-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-access-group-1, groupId=access-group] Found no committed offset for partition access-events-1
+2025-06-01T16:54:37.853-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-access-group-1, groupId=access-group] Found no committed offset for partition access-events-0
+2025-06-01T16:54:37.959-05:00  INFO 421198 --- [accesscontrolservice] [ | access-group] [                                                 ] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-access-group-1, groupId=access-group] Resetting offset for partition access-events-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1 rack: null)], epoch=0}}.
+2025-06-01T16:54:37.961-05:00  INFO 421198 --- [accesscontrolservice] [ | access-group] [                                                 ] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-access-group-1, groupId=access-group] Resetting offset for partition access-events-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1 rack: null)], epoch=0}}.
+2025-06-01T16:54:37.961-05:00  INFO 421198 --- [accesscontrolservice] [ | access-group] [                                                 ] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-access-group-1, groupId=access-group] Resetting offset for partition access-events-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1 rack: null)], epoch=0}}.
+2025-06-01T16:54:37.966-05:00  INFO 421198 --- [accesscontrolservice] [ntainer#0-0-C-1] [                                                 ] o.s.k.l.KafkaMessageListenerContainer    : access-group: partitions assigned: [access-events-0, access-events-1, access-events-2]
+2025-06-01T16:54:47.383-05:00  INFO 421198 --- [accesscontrolservice] [nio-8083-exec-1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-01T16:54:47.384-05:00  INFO 421198 --- [accesscontrolservice] [nio-8083-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-01T16:54:47.394-05:00  INFO 421198 --- [accesscontrolservice] [nio-8083-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2025-06-01T16:58:08.829-05:00  INFO 421198 --- [accesscontrolservice] [nio-8083-exec-8] [683cccee0f7e44468e1fc2a334f6ca7a-0043c86474ae3305] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1961 ms
+2025-06-01T17:22:39.504-05:00  INFO 421198 --- [accesscontrolservice] [nio-8083-exec-9] [683cd2ae7f795443ac251d8ff33cc48c-362d81ef7cacd5d7] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1125 ms
+2025-06-01T17:27:05.428-05:00  INFO 421198 --- [accesscontrolservice] [nio-8083-exec-9] [683cd3b828bd166786fd5002f1b765c9-71753463969b3663] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 453 ms
+2025-06-01T17:28:22.038-05:00  INFO 421198 --- [accesscontrolservice] [nio-8083-exec-6] [683cd405c628d5ffc6f188cae881c840-18e0e351e80be99e] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 512 ms
+2025-06-01T17:40:01.042-05:00  INFO 421198 --- [accesscontrolservice] [nio-8083-exec-5] [683cd6c00f5775765dcf83612ce4d445-6f3921d9759edb6f] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 543 ms
+2025-06-01T17:40:11.658-05:00  INFO 421198 --- [accesscontrolservice] [nio-8083-exec-7] [683cd6ca50864ce7c9f72773a32ed127-80ca7cf8aeaa8bff] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 972 ms

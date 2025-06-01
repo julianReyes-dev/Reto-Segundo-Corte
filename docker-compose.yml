@@ -1,0 +1,185 @@
+services:
+  # Auth Service Database
+  auth-postgres:
+    image: postgres:13
+    container_name: auth-postgres
+    environment:
+      POSTGRES_PASSWORD: UPTC2025
+      POSTGRES_DB: logindb
+      POSTGRES_USER: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - auth_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # Employee Service Database
+  employee-mongodb:
+    image: mongo:4.4.18
+    container_name: employee-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: uptc2024
+      MONGO_INITDB_DATABASE: EmployeeDB
+    ports:
+      - "27017:27017"
+    volumes:
+      - employee_mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    ports:
+      - "8082:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: uptc2024
+      ME_CONFIG_MONGODB_SERVER: employee-mongodb
+    depends_on:
+      - employee-mongodb
+    restart: unless-stopped
+
+  # Access Control Databases
+  access-postgres:
+    image: postgres:13
+    container_name: access-postgres
+    environment:
+      POSTGRES_PASSWORD: uptc2024
+      POSTGRES_DB: AccessControlCommandDB
+      POSTGRES_USER: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - access_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  access-mongodb:
+    image: mongo:4.4.18
+    container_name: access-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: uptc2024
+      MONGO_INITDB_DATABASE: AccessControlQueryDB
+    ports:
+      - "27018:27017"
+    volumes:
+      - access_mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # Kafka y Zookeeper
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.0
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_INIT_LIMIT: 10
+      ZOOKEEPER_SYNC_LIMIT: 5
+    ports:
+      - "22181:2181"
+    volumes:
+      - zookeeper_data:/var/lib/zookeeper/data
+      - zookeeper_log:/var/lib/zookeeper/log
+    healthcheck:
+      test: ["CMD-SHELL", "zkServer.sh status"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  kafka:
+    image: confluentinc/cp-kafka:7.4.0
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "29092:29092"
+      - "7071:7071"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_JMX_PORT: 7071
+      KAFKA_JMX_HOSTNAME: kafka
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_HEAP_OPTS: "-Xmx512M -Xms512M"
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+    healthcheck:
+      test: ["CMD-SHELL", "kafka-topics --bootstrap-server localhost:9092 --list"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+    restart: unless-stopped
+
+  # Monitoring
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./Reporting Service/prometheus.yml:/etc/prometheus/prometheus.yml
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    restart: unless-stopped
+    networks:
+      - default
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: uptc2024
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+    networks:
+      - default
+
+networks:
+  default:
+    name: monitoring_network
+    driver: bridge
+  
+volumes:
+  auth_postgres_data:
+  employee_mongodb_data:
+  access_postgres_data:
+  access_mongodb_data:
+  zookeeper_data:
+  zookeeper_log:
+  kafka_data:
+  grafana_data:
