@@ -1,24 +1,42 @@
-{
-  "properties": [
-    {
-      "name": "springdoc.swagger-ui.path",
-      "type": "java.lang.String",
-      "description": "A description for 'springdoc.swagger-ui.path'"
-    },
-    {
-      "name": "springdoc.api-docs.path",
-      "type": "java.lang.String",
-      "description": "A description for 'springdoc.api-docs.path'"
-    },
-    {
-      "name": "jwt.expiration",
-      "type": "java.lang.String",
-      "description": "A description for 'jwt.expiration'"
-    },
-    {
-      "name": "jwt.secret",
-      "type": "java.lang.String",
-      "description": "A description for 'jwt.secret'"
-    }
-  ]
-}
+{"properties": [
+  {
+    "name": "springdoc.swagger-ui.path",
+    "type": "java.lang.String",
+    "description": "A description for 'springdoc.swagger-ui.path'"
+  },
+  {
+    "name": "springdoc.api-docs.path",
+    "type": "java.lang.String",
+    "description": "A description for 'springdoc.api-docs.path'"
+  },
+  {
+    "name": "jwt.expiration",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.expiration'"
+  },
+  {
+    "name": "jwt.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.secret'"
+  },
+  {
+    "name": "management.endpoints.web.exposure.include",
+    "type": "java.lang.String",
+    "description": "A description for 'management.endpoints.web.exposure.include'"
+  },
+  {
+    "name": "management.endpoint.prometheus.access",
+    "type": "java.lang.String",
+    "description": "A description for 'management.endpoint.prometheus.access'"
+  },
+  {
+    "name": "management.prometheus.metrics.export.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'management.prometheus.metrics.export.enabled'"
+  },
+  {
+    "name": "management.metrics.tags.application",
+    "type": "java.lang.String",
+    "description": "A description for 'management.metrics.tags.application'"
+  }
+]}

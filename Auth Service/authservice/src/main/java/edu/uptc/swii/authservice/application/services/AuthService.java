@@ -16,9 +16,8 @@ public class AuthService {
     
     private final AuthUseCase authUseCase;
     private final UserManagementUseCase userManagementUseCase;
-    private final UserRepositoryPort userRepositoryPort;
     private final PasswordEncoder passwordEncoder;
-    private final JwtTokenProvider jwtTokenProvider; // Cambiado a final
+    private final JwtTokenProvider jwtTokenProvider;
      private static final Logger logger = LoggerFactory.getLogger(AuthService.class);
     
     public AuthService(AuthUseCase authUseCase, 
@@ -28,7 +27,6 @@ public class AuthService {
                      JwtTokenProvider jwtTokenProvider) { // Añadido parámetro
         this.authUseCase = authUseCase;
         this.userManagementUseCase = userManagementUseCase;
-        this.userRepositoryPort = userRepositoryPort;
         this.passwordEncoder = passwordEncoder;
         this.jwtTokenProvider = jwtTokenProvider; // Inicializado correctamente
     }

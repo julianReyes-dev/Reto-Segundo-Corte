@@ -1,4 +1,4 @@
-package uptc.edu.swii.accesscontrolservice.shared.config;
+package uptc.edu.swii.reportingservice.infrastructure.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -7,7 +7,6 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,28 +14,31 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.util.List;
-@RequiredArgsConstructor
+import javax.crypto.SecretKey;
+
 public class JwtTokenFilter extends OncePerRequestFilter {
 
-    private final String jwtSecret;
+    private final SecretKey secretKey;
+
+    public JwtTokenFilter(String jwtSecret) {
+        this.secretKey = Keys.hmacShaKeyFor(jwtSecret.getBytes());
+    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
-                                    HttpServletResponse response,
-                                    FilterChain filterChain) throws ServletException, IOException {
-
+                                   HttpServletResponse response,
+                                   FilterChain filterChain) throws ServletException, IOException {
+        
         String path = request.getRequestURI();
 
-        // Permitir endpoints públicos y Swagger sin token
-        if (
-            path.startsWith("/api/access/command/check-in") ||
-            path.startsWith("/api/access/command/check-out") ||
+        // Permitir endpoints públicos
+         if (
             path.startsWith("/swagger-ui") ||
             path.startsWith("/v3/api-docs") ||
             path.startsWith("/api-docs") ||
             path.equals("/swagger-ui.html") ||
             path.equals("/actuator/prometheus") ||
-            path.startsWith("/actuator/**")
+            path.startsWith("/actuator")
         ) {
             filterChain.doFilter(request, response);
             return;
@@ -49,11 +51,11 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             return;
         }
 
-        String token = header.replace("Bearer ", "");
+        String token = header.substring(7); // Eliminar "Bearer "
 
         try {
             Claims claims = Jwts.parserBuilder()
-                    .setSigningKey(Keys.hmacShaKeyFor(jwtSecret.getBytes()))
+                    .setSigningKey(secretKey)
                     .build()
                     .parseClaimsJws(token)
                     .getBody();
@@ -72,13 +74,11 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             );
 
             SecurityContextHolder.getContext().setAuthentication(auth);
+            filterChain.doFilter(request, response);
 
         } catch (Exception e) {
             SecurityContextHolder.clearContext();
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid token: " + e.getMessage());
-            return;
         }
-
-        filterChain.doFilter(request, response);
     }
 }

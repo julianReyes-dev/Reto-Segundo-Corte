@@ -1,0 +1,86 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+      routes:
+        - id: auth-service
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - name: JwtAuthenticationFilter
+              args:
+                excludePaths: /api/auth/login,/api/auth/create,/api/auth/validate,/api/auth/debug/validate
+            - RewritePath=/api/auth/(?<segment>.*), /api/auth/$\{segment}
+
+        - id: employee-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/employee/**
+          filters:
+            - name: JwtAuthenticationFilter
+            - RewritePath=/api/employee/(?<segment>.*), /employee/$\{segment}
+
+        - id: access-control-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/access/**
+          filters:
+            - name: JwtAuthenticationFilter
+            - RewritePath=/api/access/(?<segment>.*), /api/access/$\{segment}
+
+        - id: reporting-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/api/reports/**
+          filters:
+            - name: JwtAuthenticationFilter
+            - RewritePath=/api/reports/(?<segment>.*), /api/reports/$\{segment}
+
+        - id: swagger
+          uri: http://localhost:8080
+          predicates:
+            - Path=/v3/api-docs/auth
+          filters:
+            - RewritePath=/v3/api-docs/(?<segment>.*), /api-docs/$\{segment}
+
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 5s
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080
+          jwk-set-uri: http://localhost:8080/.well-known/jwks.json
+
+jwt:
+  secret: my-very-secure-secret-key-that-is-at-least-256-bits-long-1234567890
+  expiration: 3600000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus, metrics
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      access: unrestricted
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+logging:
+  level:
+    root: INFO
+    '[org.springframework.cloud.gateway]': DEBUG
+    '[uptc.edu.swii.gateway]': DEBUG

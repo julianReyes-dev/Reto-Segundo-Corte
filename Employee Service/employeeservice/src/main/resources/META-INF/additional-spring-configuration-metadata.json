@@ -13,5 +13,25 @@
     "name": "springdoc.openapi.version",
     "type": "java.lang.String",
     "description": "A description for 'springdoc.openapi.version'"
+  },
+  {
+    "name": "management.endpoints.web.exposure.include",
+    "type": "java.lang.String",
+    "description": "A description for 'management.endpoints.web.exposure.include'"
+  },
+  {
+    "name": "management.endpoint.prometheus.access",
+    "type": "java.lang.String",
+    "description": "A description for 'management.endpoint.prometheus.access'"
+  },
+  {
+    "name": "management.metrics.tags.application",
+    "type": "java.lang.String",
+    "description": "A description for 'management.metrics.tags.application'"
+  },
+  {
+    "name": "management.prometheus.metrics.export.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'management.prometheus.metrics.export.enabled'"
   }
 ]}
