@@ -1,0 +1,52 @@
+{"properties": [
+  {
+    "name": "cors.allowedMethods",
+    "type": "java.lang.String",
+    "description": "A description for 'cors.allowedMethods'"
+  },
+  {
+    "name": "cors.allowedOrigins",
+    "type": "java.lang.String",
+    "description": "A description for 'cors.allowedOrigins'"
+  },
+  {
+    "name": "auth.service.url",
+    "type": "java.lang.String",
+    "description": "A description for 'auth.service.url'"
+  },
+  {
+    "name": "cors.allowedOrigins",
+    "type": "java.lang.String",
+    "description": "A description for 'cors.allowedOrigins'"
+  },
+  {
+    "name": "cors.allowedOrigins",
+    "type": "java.lang.String",
+    "description": "A description for 'cors.allowedOrigins'"
+  },
+  {
+    "name": "cors.allowed-origins",
+    "type": "java.lang.String",
+    "description": "A description for 'cors.allowed-origins'"
+  },
+  {
+    "name": "cors.allowed-methods",
+    "type": "java.lang.String",
+    "description": "A description for 'cors.allowed-methods'"
+  },
+  {
+    "name": "cors.allowed-headers",
+    "type": "java.lang.String",
+    "description": "A description for 'cors.allowed-headers'"
+  },
+  {
+    "name": "cors.exposed-headers",
+    "type": "java.lang.String",
+    "description": "A description for 'cors.exposed-headers'"
+  },
+  {
+    "name": "cors.allow-credentials",
+    "type": "java.lang.String",
+    "description": "A description for 'cors.allow-credentials'"
+  }
+]}

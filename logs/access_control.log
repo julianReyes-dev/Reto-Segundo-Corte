@@ -1,0 +1,2 @@
+Error: no se ha encontrado o cargado la clase principal uptc.edu.swii.accesscontrolservice.AccesssontrolserviceApplication
+Causado por: java.lang.ClassNotFoundException: uptc.edu.swii.accesscontrolservice.AccesssontrolserviceApplication
