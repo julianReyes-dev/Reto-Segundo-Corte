@@ -8,6 +8,7 @@ JARS=(
   "accesscontrolservice-0.0.1-SNAPSHOT.jar"
   "employeeservice-0.0.1-SNAPSHOT.jar"
   "reportingservice-0.0.1-SNAPSHOT.jar"
+  "gateway-0.0.1-SNAPSHOT.jar"
 )
 
 for jar in "${JARS[@]}"; do

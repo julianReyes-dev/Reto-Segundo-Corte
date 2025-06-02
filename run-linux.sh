@@ -18,4 +18,8 @@ echo "Employee Service iniciado."
 java -jar "$BASE_DIR/Reporting Service/reportingservice/target/reportingservice-0.0.1-SNAPSHOT.jar" > logs/reporting.log 2>&1 &
 echo "Reporting Service iniciado."
 
-echo "Todos los servicios han sido lanzados. Revisa los archivos .log para monitorear su salida."
+java -jar "$BASE_DIR/Api Gateway/gateway/target/gateway-0.0.1-SNAPSHOT.jar" > logs/gateway.log 2>&1 &
+echo "Api Gateway iniciado."
+
+echo "Todos los servicios han sido lanzados. Pueden tardar unos minutos en estar completamente listos.
+Revisa los archivos .log para monitorear su salida."
