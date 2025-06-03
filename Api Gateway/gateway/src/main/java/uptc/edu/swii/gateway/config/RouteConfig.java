@@ -21,7 +21,7 @@ public class RouteConfig {
             .route("access-control", r -> r.path("/api/access/**")
                 .filters(f -> f.filter(jwtAuthFilter))
                 .uri("http://localhost:8083"))
-            .route("reporting", r -> r.path("/api/reporting/**")
+            .route("reporting", r -> r.path("/api/reports/**")
                 .filters(f -> f.filter(jwtAuthFilter))
                 .uri("http://localhost:8084"))
             // Prometheus con JWT y rewritePath

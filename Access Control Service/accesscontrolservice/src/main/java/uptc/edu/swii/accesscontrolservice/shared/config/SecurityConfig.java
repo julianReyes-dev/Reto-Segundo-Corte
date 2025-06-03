@@ -31,9 +31,6 @@ public class SecurityConfig {
                 .requestMatchers("/api/access/command/check-in").permitAll()
                 .requestMatchers("/api/access/command/check-out").permitAll()
                 
-                // Endpoints de consulta que requieren autenticación
-                .requestMatchers("/api/access/query/**").hasAnyRole("ADMIN", "USER")
-                
                 // Swagger y documentación
                 .requestMatchers(
                     "/swagger-ui.html",

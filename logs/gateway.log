@@ -8,10 +8,10 @@
 
  :: Spring Boot ::                (v3.5.0)
 
-2025-06-02T06:45:31.334-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] u.edu.swii.gateway.GatewayApplication    : Starting GatewayApplication v0.0.1-SNAPSHOT using Java 17.0.15 with PID 373460 (/home/julian/Documentos/Software 2/Papelera reto segundo corte/Reto-Segundo-Corte/Api Gateway/gateway/target/gateway-0.0.1-SNAPSHOT.jar started by julian in /home/julian/Documentos/Software 2/Papelera reto segundo corte/Reto-Segundo-Corte)
-2025-06-02T06:45:31.354-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] u.edu.swii.gateway.GatewayApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-06-02T06:45:38.775-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.cloud.context.scope.GenericScope     : BeanFactory id=23b81e51-3149-3d02-9d6e-bddd272b385c
-2025-06-02T06:45:42.380-05:00  WARN 373460 --- [gateway] [           main] [                                                 ] GatewayClassPathWarningAutoConfiguration : 
+2025-06-03T14:19:08.268-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] u.edu.swii.gateway.GatewayApplication    : Starting GatewayApplication v0.0.1-SNAPSHOT using Java 17.0.15 with PID 97469 (/home/julian/Documentos/Software 2/Reto Segundo Corte/Api Gateway/gateway/target/gateway-0.0.1-SNAPSHOT.jar started by julian in /home/julian/Documentos/Software 2/Reto Segundo Corte)
+2025-06-03T14:19:08.284-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] u.edu.swii.gateway.GatewayApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-06-03T14:19:16.888-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.cloud.context.scope.GenericScope     : BeanFactory id=23b81e51-3149-3d02-9d6e-bddd272b385c
+2025-06-03T14:19:19.617-05:00  WARN 97469 --- [gateway] [           main] [                                                 ] GatewayClassPathWarningAutoConfiguration : 
 
 **********************************************************
 
@@ -20,22 +20,22 @@ The artifact spring-cloud-gateway-server is deprecated. It will be removed in th
 **********************************************************
 
 
-2025-06-02T06:45:43.305-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
-2025-06-02T06:45:43.305-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
-2025-06-02T06:45:43.306-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
-2025-06-02T06:45:43.306-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
-2025-06-02T06:45:43.306-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
-2025-06-02T06:45:43.306-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
-2025-06-02T06:45:43.306-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
-2025-06-02T06:45:43.306-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
-2025-06-02T06:45:43.307-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
-2025-06-02T06:45:43.307-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
-2025-06-02T06:45:43.307-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
-2025-06-02T06:45:43.308-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2025-06-02T06:45:43.308-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
-2025-06-02T06:45:43.308-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2025-06-02T06:45:44.412-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
-2025-06-02T06:45:45.426-05:00  WARN 373460 --- [gateway] [           main] [                                                 ] s.w.s.StarterDeprecatedAutoConfiguration : 
+2025-06-03T14:19:21.378-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2025-06-03T14:19:21.390-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2025-06-03T14:19:21.392-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2025-06-03T14:19:21.401-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2025-06-03T14:19:21.401-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2025-06-03T14:19:21.401-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2025-06-03T14:19:21.403-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2025-06-03T14:19:21.416-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2025-06-03T14:19:21.416-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2025-06-03T14:19:21.416-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2025-06-03T14:19:21.417-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2025-06-03T14:19:21.417-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-06-03T14:19:21.417-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2025-06-03T14:19:21.417-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-06-03T14:19:22.859-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2025-06-03T14:19:24.964-05:00  WARN 97469 --- [gateway] [           main] [                                                 ] s.w.s.StarterDeprecatedAutoConfiguration : 
 
 **********************************************************
 
@@ -44,5 +44,5 @@ spring-cloud-starter-gateway is deprecated. It will be removed in the next major
 **********************************************************
 
 
-2025-06-02T06:45:47.034-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8085 (http)
-2025-06-02T06:45:47.190-05:00  INFO 373460 --- [gateway] [           main] [                                                 ] u.edu.swii.gateway.GatewayApplication    : Started GatewayApplication in 19.634 seconds (process running for 22.91)
+2025-06-03T14:19:26.768-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8085 (http)
+2025-06-03T14:19:26.921-05:00  INFO 97469 --- [gateway] [           main] [                                                 ] u.edu.swii.gateway.GatewayApplication    : Started GatewayApplication in 22.307 seconds (process running for 25.983)

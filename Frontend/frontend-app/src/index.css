@@ -1,0 +1,143 @@
+/* Estilos globales básicos */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+nav {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+nav ul {
+  padding: 0;
+  list-style: none;
+  display: flex; /* Para alinear horizontalmente */
+  justify-content: center; /* Centrar los elementos */
+}
+
+nav ul li {
+  display: inline; /* Opcional si usas flex */
+  margin: 0 15px; /* Espacio entre elementos */
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+button.danger {
+  background-color: #d9534f;
+}
+
+button.danger:hover {
+  background-color: #c9302c;
+}
+
+button.secondary {
+  background-color: #6c757d;
+}
+button.secondary:hover {
+  background-color: #5a6268;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input, form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.actions button {
+    margin-right: 5px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
